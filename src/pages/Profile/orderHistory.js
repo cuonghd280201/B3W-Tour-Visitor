@@ -172,14 +172,12 @@ const OrderHistory = () => {
                                                         <p className="mb-0">Tên Chuyến Đi:<b> {order.tourInfoDTO.title}</b></p>
                                                     </span>
                                                 </div>
+                
                                                 <p className="mb-0">
-                                                    <span>Tiền Trả:<b> {order.paid.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</b> </span>
+                                                    <span>Số tiền thanh còn lại:<b> {order.amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</b> </span>
                                                 </p>
                                                 <p className="mb-0">
-                                                    <span>Số tiền thanh còn lại:<b> {order.priceAfterPaid.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</b> </span>
-                                                </p>
-                                                <p className="mb-0">
-                                                    <small>Số tiền đã thanh toán:<b> {order.amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</b> </small>
+                                                    <small>Số tiền đã thanh toán:<b> {order.paid.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</b> </small>
                                                 </p>
                                             </div>
                                         </div>

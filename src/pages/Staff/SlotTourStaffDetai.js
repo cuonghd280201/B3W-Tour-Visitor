@@ -40,12 +40,12 @@ const SlotTourStaffDetai = () => {
 
   const renderTourSchedules = () => {
     const scheduleDate = timeDetail?.tourTimeDTO?.startDate;
-  
+
     if (timeDetail && timeDetail.tourScheduleDTOSet && scheduleDate) {
       const [day, month, year] = scheduleDate.split('-');
       const initialDate = new Date(`${year}-${month}-${day}`);
       return timeDetail.tourScheduleDTOSet.map((schedule, index) => {
-        initialDate.setDate(initialDate.getDate() + index);   
+        initialDate.setDate(initialDate.getDate() + index);
         const adjustedDate = `${String(initialDate.getDate()).padStart(2, '0')}-${String(initialDate.getMonth() + 1).padStart(2, '0')}-${initialDate.getFullYear()}`;
         const isComing = adjustedDate === currentDate || adjustedDate < currentDate;
         return (
@@ -67,19 +67,26 @@ const SlotTourStaffDetai = () => {
 
   const renderTourSchedulesDescription = () => {
     if (timeDetail && timeDetail.tourScheduleDTOSet) {
-        return timeDetail.tourScheduleDTOSet.map((schedule, index) => {
-            return (
-                <div         
-                >
-                    <h4>Ngày {index + 1}: {schedule.title}</h4>
-                    <p>{schedule.description}</p>
-                </div>
-            );
-        });
+      return timeDetail.tourScheduleDTOSet.map((schedule, index) => {
+        return (
+          <div
+          >
+            <h4>Ngày {index + 1}: {schedule.title}</h4>
+            <p>{schedule.description}</p>
+          </div>
+        );
+      });
     }
     return null;
-};
+  };
+  const navigate = useNavigate();
 
+
+  const navigateToFindVisitor = () => {
+    if (timeDetail) {
+      navigate('/listVisitorTourByTour', { state: { tourTimeId: timeDetail.tourTimeDTO.id } });
+    }
+  };
 
   return (
     <React.Fragment>
@@ -136,7 +143,7 @@ const SlotTourStaffDetai = () => {
                               marginBottom: 5,
                             }}
                           >
-                            {timeDetail?.tourDTO.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} 
+                            {timeDetail?.tourDTO.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
                           </p>
                           <p
                             className="text-primary"
@@ -165,7 +172,7 @@ const SlotTourStaffDetai = () => {
                         <div className="container-fluid">
                           <div className="row">
                             <div className="col-md-24 left">
-                            <p class="s-title-03 tour-des"> {timeDetail?.tourDTO.description} </p>
+                              <p class="s-title-03 tour-des"> {timeDetail?.tourDTO.description} </p>
                               <div className="box-order">
                                 <div className="time"><p>Khởi hành <b> </b>
                                 </p>
@@ -193,28 +200,42 @@ const SlotTourStaffDetai = () => {
                   </div>
                 </div>
                 <section className="section-07-map mb-5">
-                  <div class="container-fluid">
+                  <div class="container-fluid" style={{
+                    fontSize: "15px",
+                    padding: "8px 16px",
+                    border: "1px solid gray",
+                    borderRadius: "10px",
+                    transition: "background-color 0.3s, color 0.3s",
+                    display: "flex",
+                    alignItems: "center",
+                  }}>
                     <div className="row">
-                      <div className="col-md-5">
-                      <div class="container-fluid">
-                        <main class="row">
-                          <section className="col">
-                            <header className="title">
-                              <h2>Lịch Trình</h2>
-                              <p>Màu xanh: Đã Tới Điểm Hẹn</p>
-                              <p>Màu trắng: Chưa Tới Điểm Hẹn</p>
-                            </header>
-                            <div className="contents">
-                              {renderTourSchedules()}
-                            </div>
-                          </section>
-                        </main>
+                      <div className="col-md-5" style={{
+                        transition: "background-color 0.3s, color 0.3s",
+                        display: "flex",
+                        alignItems: "center",
+                        borderRadius: "10px",
+                        backgroundColor: "#f0f0f0"
+                      }}>
+                        <div class="container-fluid">
+                          <main class="row">
+                            <section className="col">
+                              <header className="title">
+                                <h2>Lịch Trình</h2>
+                                <p>Màu xanh: Đã Tới Điểm Hẹn</p>
+                                <p>Màu trắng: Chưa Tới Điểm Hẹn</p>
+                              </header>
+                              <div className="contents" style={{ width: '400px' }}>
+                                {renderTourSchedules()}
+                              </div>
+                            </section>
+                          </main>
+                        </div>
                       </div>
-                    </div>
-                    <div className="col-md-6">
-                      <div>
-                        {renderTourSchedulesDescription()}
-                      </div>
+                      <div className="col-md-6">
+                        <div>
+                          {renderTourSchedulesDescription()}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -323,24 +344,42 @@ const SlotTourStaffDetai = () => {
                 ))}
 
 
-                <Link to="/listTourStaff" style={{ textDecoration: "none" }}>
-                  <button
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <Link to="/listTourStaff" style={{ textDecoration: "none" }}>
+                    <button
+                      style={{
+                        backgroundColor: "#ff4d4f",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "5px",
+                        padding: "10px 20px",
+                        fontSize: "16px",
+                        cursor: "pointer",
+                        boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+                        transition: "background-color 0.3s",
+                      }}
+                    >
+                      Trở về
+                    </button>
+                  </Link>
+
+                  {/* Add your new button here */}
+                  <button onClick={navigateToFindVisitor}
                     style={{
-                      backgroundColor: "#ff4d4f",
+                      backgroundColor: "#FFA500",
                       color: "white",
                       border: "none",
                       borderRadius: "5px",
                       padding: "10px 20px",
-                      marginLeft: "10px",
                       fontSize: "16px",
                       cursor: "pointer",
                       boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                       transition: "background-color 0.3s",
                     }}
                   >
-                    Trở về
+                    Danh Sách Đi
                   </button>
-                </Link>
+                </div>
               </div>
             </div>
           </div>

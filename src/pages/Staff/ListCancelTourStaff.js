@@ -148,7 +148,13 @@ const ListCancelTourStaff = () => {
                                                                 </span>
                                                             </div>
                                                             <p className="mb-0">
+                                                                <span className="text-muted">Mã Chuyến Đi: <b>{orderS.tourDTO.code}</b></span>
+                                                            </p>
+                                                            <p className="mb-0">
                                                                 <span className="text-muted">Tên Chuyến Đi: <b>{orderS.tourDTO.title}</b></span>
+                                                            </p>
+                                                            <p className="mb-0">
+                                                                <span className="text-muted">Mã thời gian đi: <b>{orderS.tourTimeDTO.code}</b></span>
                                                             </p>
                                                             <p className="mb-0">
                                                                 <span className="text-muted">Giá Chuyến Đi: <b>{orderS.tourDTO.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</b></span>

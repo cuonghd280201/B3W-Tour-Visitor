@@ -114,12 +114,14 @@ const OrderBookTourDetail = () => {
         const response = await paymentServices.postPayMentVNPay(amount, vnp_TxnRef);
         console.log("response", response);
         toast.success("Chuyển hướng thanh toán thành công ");
+        fetchOrderDetail();
         if (response && response.data && response.data.url) {
           window.open(response.data.url, "_blank");
       }
     } catch (error) {
         toast.success("Chuyển hướng thanh toan thành công");
         console.error("Error payment failed", error);
+        fetchOrderDetail();
     }
 }
 
@@ -238,12 +240,12 @@ const handlePaymentVNPAYClick = async () => {
                         <p
                           style={{ fontSize: 18, marginBottom: 5 }}
                         >
-                          Tiền đã trả:<b> {orderDetail?.paid.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</b>
+                          Tiền trả:<b> {orderDetail?.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</b>
                         </p>
                         <p
                           style={{ fontSize: 18, marginBottom: 5 }}
                         >
-                          Số tiền thanh toán: <b>{orderDetail?.amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} </b>
+                          Số tiền thanh toán: <b>{orderDetail?.paid.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} </b>
                         </p>
                         <p
                           style={{ fontSize: 18, marginBottom: 5 }}
