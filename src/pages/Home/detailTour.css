@@ -1,0 +1,2116 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.scrollable-section {
+    max-height: 400px; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+}
+
+.past-schedule {
+    background-color: yellow; /* Màu nền bạn muốn */
+  }
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.flight-hotel-detail .section-01-title {
+    background: #f9f9f9;
+    padding-bottom: 28px;
+    padding-top: 32px;
+}
+
+.tour-detail .section-01 {
+    background: #f9f9f9;
+    padding-bottom: 28px;
+    padding-top: 32px;
+}
+.flight-hotel-detail .section-01 {
+    background: #f9f9f9;
+    padding-bottom: 28px;
+    padding-top: 32px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x) / -2);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-top: calc(var(--bs-gutter-y)* -1);
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+.flight-hotel-detail .section-01-title .left .warp-mark {
+    color: #4d4aef;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.tour-detail .section-01 .left .warp-mark {
+    color: #4d4aef;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+.flight-hotel-detail .section-01 .left .warp-mark {
+    color: #4d4aef;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+.flight-hotel-detail .warp-mark {
+    align-items: center;
+    display: flex;
+    gap: 0 10px;
+}
+
+.tour-detail .section-01 .left .warp-mark i {
+    padding-right: 8px;
+}
+
+.flight-hotel-detail .section-01 .left .warp-mark i {
+    padding-right: 8px;
+}
+.fal, .far {
+}
+.fal {
+    font-weight: 300;
+}
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+label {
+    display: inline-block;
+}
+
+label {
+    display: inline-block;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+label {
+    cursor: default;
+}
+
+.flight-hotel-detail .section-01-title .left .title {
+    color: rgb(33, 37, 41);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 12px;
+    max-width: 100%;
+}
+
+.tour-detail .section-01 .left .title {
+    color: rgb(33, 37, 41);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 12px;
+    max-width: 100%;
+}
+.flight-hotel-detail .section-01 .left .title {
+    color: rgb(33, 37, 41);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 12px;
+}
+.h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+    margin-top: 0;
+}
+.h1, h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+h1 {
+    font-size: 2em;
+    margin: .67em 0;
+}
+
+.flight-hotel-detail .section-01-title .left .short-rating {
+    display: flex;
+}
+
+.tour-detail .section-01 .left .short-rating {
+    display: flex;
+}
+.flight-hotel-detail .section-01 .left .short-rating {
+    display: flex;
+}
+
+.flight-hotel-detail .section-01-title .left .short-rating .s-rate {
+    align-items: center;
+    display: flex;
+    margin-right: 22px;
+}
+
+.tour-detail .section-01 .left .short-rating .s-rate {
+    align-items: center;
+    display: flex;
+    margin-right: 22px;
+}
+.flight-hotel-detail .section-01 .left .short-rating .s-rate {
+    align-items: center;
+    display: flex;
+    margin-right: 22px;
+}
+
+.flight-hotel-detail .section-01-title .left .short-rating .s-rate span {
+    align-items: center;
+    background: #fdc432;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: rgb(33, 37, 41);
+    display: flex;
+    font-size: 25px;
+    font-weight: 700;
+    height: 50px;
+    justify-content: center;
+    line-height: 20px;
+    margin-right: 11px;
+    position: relative;
+    width: 65px;
+}
+
+.tour-detail .section-01 .left .short-rating .s-rate span {
+    align-items: center;
+    background: #fdc432;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #fff;
+    display: flex;
+    font-size: 25px;
+    font-weight: 700;
+    height: 50px;
+    justify-content: center;
+    line-height: 20px;
+    margin-right: 11px;
+    position: relative;
+    width: 65px;
+}
+.flight-hotel-detail .section-01 .left .short-rating .s-rate span {
+    align-items: center;
+    background: #fdc432;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #fff;
+    display: flex;
+    font-size: 25px;
+    font-weight: 700;
+    height: 50px;
+    justify-content: center;
+    line-height: 20px;
+    margin-right: 11px;
+    position: relative;
+    width: 65px;
+}
+
+.flight-hotel-detail .section-01-title .left .short-rating .s-rate .s-comment p {
+    color: rgb(33, 37, 41);
+    font-size: 13px;
+    margin: 0;
+}
+
+.tour-detail .section-01 .left .short-rating .s-rate .s-comment p {
+    color: rgb(33, 37, 41);
+    font-size: 13px;
+    margin: 0;
+}
+.flight-hotel-detail .section-01 .left .short-rating .s-rate .s-comment p {
+    color: rgb(33, 37, 41);
+    font-size: 13px;
+    margin: 0;
+}
+p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.flight-hotel-detail .section-01-title .left .short-rating .s-wishlist {
+    align-items: center;
+    background: #fff;
+    border: .5px solid #d5d5d5;
+    border-radius: 5px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    width: 112px;
+}
+
+.tour-detail .section-01 .left .short-rating .s-wishlist {
+    align-items: center;
+    background: #fff;
+    border: .5px solid #d5d5d5;
+    border-radius: 5px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    width: 112px;
+}
+.flight-hotel-detail .section-01 .left .short-rating .s-wishlist {
+    align-items: center;
+    background: #fff;
+    border: .5px solid #d5d5d5;
+    border-radius: 5px;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    width: 112px;
+}
+
+.flight-hotel-detail .section-01-title .right {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 25px;
+}
+
+.tour-detail .section-01 .right {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 25px;
+}
+.flight-hotel-detail .section-01 .right {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 25px;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+.flight-hotel-detail .section-01-title .right .group-price {
+    text-align: right;
+}
+
+.tour-detail .section-01 .right .group-price {
+    text-align: right;
+}
+.flight-hotel-detail .section-01 .right .group-price {
+    text-align: right;
+}
+
+.flight-hotel-detail .section-01-title .right .group-price .or-price {
+    color: rgb(33, 37, 41);
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.tour-detail .section-01 .right .group-price .or-price {
+    color: rgb(33, 37, 41);
+    font-size: 13px;
+    line-height: 16px;
+}
+.flight-hotel-detail .section-01 .right .group-price .or-price {
+    color: rgb(33, 37, 41);
+    font-size: 13px;
+    line-height: 16px;
+}
+.flight-hotel-detail .section-01-title .right .group-price .or-price p {
+    margin-bottom: 0;
+}
+
+.tour-detail .section-01 .right .group-price .or-price p {
+    margin-bottom: 0;
+}
+.flight-hotel-detail .section-01 .right .group-price .or-price p {
+    margin-bottom: 0;
+}
+p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+.tour-item__price--old__number {
+    text-decoration: line-through;
+}
+
+.flight-hotel-detail .section-01-title .right .group-price .sale-price {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tour-detail .section-01 .right .group-price .sale-price {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+.flight-hotel-detail .section-01 .right .group-price .sale-price {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tour-detail .section-01 .right .group-price .sale-price .sale {
+    align-items: center;
+    background: rgb(253, 196, 50);
+    border-radius: 2px;
+    color: #fff;
+    display: flex;
+    font-size: 11px;
+    font-weight: 700;
+    height: 20px;
+    letter-spacing: 1px;
+    line-height: 14px;
+    margin-right: 7px;
+    padding: 2px 5px;
+    text-transform: uppercase;
+}
+
+.flight-hotel-detail .section-01 .right .group-price .sale-price .sale {
+    align-items: center;
+    background: rgb(253, 196, 50);
+    border-radius: 2px;
+    color: #fff;
+    display: flex;
+    font-size: 11px;
+    font-weight: 700;
+    height: 20px;
+    letter-spacing: 1px;
+    line-height: 14px;
+    margin-right: 7px;
+    padding: 2px 5px;
+    text-transform: uppercase;
+}
+
+.flight-hotel-detail .section-01-title .right .group-price .sale-price p {
+    margin-bottom: 0;
+}
+
+p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.flight-hotel-detail .section-01-title .right .group-price .sale-price .price {
+    color: rgb(253, 196, 50);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    margin: 0;
+}
+
+.tour-detail .section-01 .right .group-price .sale-price .price {
+    color: rgb(253, 196, 50);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    margin: 0;
+}
+.flight-hotel-detail .section-01 .right .group-price .sale-price .price {
+    color: rgb(253, 196, 50);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    margin: 0;
+}
+.flight-hotel-detail .section-01-title .right .group-add-cart {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+}
+
+.tour-detail .section-01 .right .group-add-cart {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+}
+.flight-hotel-detail .section-01 .right .group-add-cart {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    width: 40%;
+}
+
+.flight-hotel-detail .section-01-title .right .group-add-cart .add-to-cart {
+    align-items: center;
+    background: linear-gradient(64.4deg, rgb(253, 196, 50) 21.33%, rgb(253, 196, 50) 67.61%);
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    font-weight: 500;
+    height: 50px;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.tour-detail .section-01 .right .group-add-cart .add-to-cart {
+    align-items: center;
+    background: linear-gradient(64.4deg, rgb(253, 196, 50) 21.33%, rgb(253, 196, 50) 67.61%);
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    font-weight: 500;
+    height: 50px;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 192px;
+}
+.flight-hotel-detail .section-01 .right .group-add-cart .add-to-cart {
+    align-items: center;
+    background: linear-gradient(64.4deg, rgb(253, 196, 50) 21.33%, rgb(253, 196, 50) 67.61%);
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    font-weight: 500;
+    height: 50px;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 192px;
+    width: 100%;
+}
+.section-01-title .right .group-add-cart .add-to-cart {
+    gap: 0 8px;
+}
+.tour-detail a {
+    text-decoration: none;
+}
+a {
+    color: rgb(33, 37, 41);
+    text-decoration: none;
+}
+a {
+}
+a {
+    color: #0d6efd;
+}
+a {
+    background-color: transparent;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+}
+.tour-detail .section-01 .right .group-add-cart .add-to-cart i {
+    margin-right: 7px;
+}
+
+.flight-hotel-detail .section-01 .right .group-add-cart .add-to-cart i {
+    margin-right: 7px;
+}
+.fal, .far {
+}
+.fal {
+    font-weight: 300;
+}
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+
+.flight-hotel-detail .section-01-title .right .group-add-cart .add-to-group {
+    align-items: center;
+    border: 1px solid rgb(33, 37, 41);
+    border-radius: 5px;
+    color: rgb(33, 37, 41);
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    width: 100%;
+}
+.tour-detail .section-01 .right .group-add-cart .add-to-group {
+    align-items: center;
+    border: 1px solid rgb(33, 37, 41);
+    border-radius: 5px;
+    color: rgb(33, 37, 41);
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    width: 192px;
+}
+.tour-detail a {
+    text-decoration: none;
+}
+a {
+    color: rgb(33, 37, 41);
+    text-decoration: none;
+}
+a {
+}
+a {
+    color: #0d6efd;
+}
+a {
+    background-color: transparent;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x) / -2);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-top: calc(var(--bs-gutter-y)* -1);
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+.flight-hotel-detail .section-01-title .right {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 25px;
+}
+
+.tour-detail .section-01 .right {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 25px;
+}
+.flight-hotel-detail .section-01 .right {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 25px;
+}
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+.tour-detail .section-02 {
+    background: #f9f9f9;
+    padding-bottom: 30px;
+}
+
+.flight-hotel-detail .section-02 {
+    background: #f9f9f9;
+    padding-bottom: 30px;
+}
+
+
+
+
+
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x) / -2);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-top: calc(var(--bs-gutter-y)* -1);
+}
+
+.animate__fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+.animate__animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-duration: var(--animate-duration);
+    animation-duration: var(--animate-duration);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+.tour-detail .section-02 .left {
+    padding-right: 0;
+    width: 57%;
+}
+
+.flight-hotel-detail .section-02 .left {
+    padding-right: 0;
+    width: 57%;
+}
+@media (min-width: 768px) {
+    .col-md-12 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}@media (min-width: 768px) {
+    .col-sm-12 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .col-md-12 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+@media (min-width: 768px) {
+    .col-sm-12 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+.tour-detail .section-02 .left .image {
+    height: 535px;
+}
+
+.flight-hotel-detail .section-02 .left .image {
+    height: 535px;
+}
+
+
+
+
+
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+
+.g-4, .gy-4 {
+    --bs-gutter-y: 1.5rem;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x) / -2);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-top: calc(var(--bs-gutter-y)* -1);
+}
+.g-4, .gy-4 {
+    --bs-gutter-y: 1.5rem;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+.small, small {
+    font-size: .875em;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+.small, small {
+    font-size: .875em;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x) / -2);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-top: calc(var(--bs-gutter-y)* -1);
+}
+
+.mb-2 {
+    margin-bottom: .5rem !important;
+}
+.mb-2 {
+    margin-bottom: .5rem !important;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+.tour-detail .section-02 .right .small .col-6 {
+    padding-right: 0;
+}
+
+.flight-hotel-detail .section-02 .right .small .col-6 {
+    padding-right: 0;
+}
+.col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.tour-detail .section-02 .right .small .col-6 .image {
+    height: 200px;
+}
+
+.flight-hotel-detail .section-02 .right .small .col-6 .image {
+    height: 200px;
+}
+
+.tour-detail .section-02 .right .small .col-6 {
+    padding-right: 0;
+}
+
+.flight-hotel-detail .section-02 .right .small .col-6 {
+    padding-right: 0;
+}
+.tour-detail .section-02 .right .small .col-6 .image {
+    height: 200px;
+}
+
+.flight-hotel-detail .section-02 .right .small .col-6 .image {
+    height: 200px;
+}
+
+
+.flight-hotel-detail .section-02 .right .big {
+    margin-top: -10px;
+}
+
+.tour-detail .section-02 .right .big {
+    margin-top: 0;
+    padding-right: 0;
+}
+.flight-hotel-detail .section-02 .right .big {
+    padding-right: 0;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.tour-detail .section-02 .right .big .image {
+    height: 335px;
+    padding-top: 10px;
+}
+
+.flight-hotel-detail .section-02 .right .big .image {
+    height: 335px;
+    padding-top: 10px;
+}
+
+
+.tour-detail .section-03 {
+    background: #f9f9f9;
+    padding-bottom: 30px;
+}
+
+.flight-hotel-detail .section-03 {
+    background: #f9f9f9;
+    padding-bottom: 30px;
+}
+.section-03 {
+    background: #f9f9f9;
+    padding-bottom: 30px;
+}
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+section {
+    display: block;
+}
+
+
+
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x) / -2);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-top: calc(var(--bs-gutter-y)* -1);
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+.tour-detail .section-03 .left .s-title-03 {
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.section-03 .left .s-title-03 {
+    line-height: 24px;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+.section-03 .tour-des {
+    max-height: 100px;
+    overflow: auto;
+    overflow-y: scroll;
+    padding-right: 15px;
+}
+p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.tour-detail .section-03 .left .box-order {
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 15px 30px;
+}
+
+.section-03 .left .box-order {
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 15px 30px;
+}
+
+.tour-detail .section-03 .left .box-order .time p {
+    margin-bottom: 10px;
+}
+
+.section-03 .left .box-order .time p {
+    margin-bottom: 10px;
+}
+p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.tour-detail .section-03 .left .box-order .calendar .calendar-box {
+    align-items: center;
+    border: 1px solid #4d4aef;
+    border-radius: 5px;
+    color: #4d4aef;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    width: 110px;
+}
+
+.section-03 .left .box-order .calendar .calendar-box {
+    align-items: center;
+    border: 1px solid #4d4aef;
+    border-radius: 5px;
+    color: #4d4aef;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    width: 110px;
+}
+
+.tour-detail .section-03 .left .box-order .calendar .calendar-box i {
+    padding-right: 5px;
+}
+
+.section-03 .left .box-order .calendar .calendar-box i {
+    padding-right: 5px;
+}
+
+.tour-detail .section-03 .right {
+    padding-left: 50px;
+}
+
+.flight-hotel-detail .section-03 .right {
+    padding-left: 50px;
+}
+.section-03 .right {
+    padding-left: 50px;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.tour-detail .section-03 .right .group-services {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    border-bottom: 1px solid #7d8fab;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+}
+
+.section-03 .right .group-services {
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    border-bottom: 1px solid #7d8fab;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+}
+.tour-detail .section-03 .right .group-services .item {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-03 .right .group-services .item {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x) / -2);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-top: calc(var(--bs-gutter-y)* -1);
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+.tour-detail .section-03 .right .group-services .item label {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.section-03 .right .group-services .item label {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+label {
+    display: inline-block;
+}
+label {
+    display: inline-block;
+}
+
+.tour-detail .section-03 .right .group-services .item p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.section-03 .right .group-services .item p {
+    font-size: 13px;
+    margin: 0;
+}
+p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.tour-detail .section-03 .right .group-services .item label {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.section-03 .right .group-services .item label {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+label {
+    display: inline-block;
+}
+label {
+    display: inline-block;
+}
+
+.tour-detail .section-03 .right .group-services .item p {
+    font-size: 13px;
+    margin: 0;
+}
+
+.section-03 .right .group-services .item p {
+    font-size: 13px;
+    margin: 0;
+}
+p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.tour-detail .section-03 {
+    background: #f9f9f9;
+    padding-bottom: 30px;
+}
+
+.flight-hotel-detail .section-03 {
+    background: #f9f9f9;
+    padding-bottom: 30px;
+}
+.section-03 {
+    background: #f9f9f9;
+    padding-bottom: 30px;
+}
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.section-07-map .right {
+    padding: 38px 42px 38px 28px;
+}
+
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    margin-top: var(--bs-gutter-y);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    width: 100%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+.section-07-map .right h3 {
+    font-size: 20px;
+    line-height: 40px;
+}
+
+h2, h3 {
+    font-size: 20px;
+    line-height: 40px;
+}
+.h3, h3 {
+    font-size: calc(1.3rem + .6vw);
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+    margin-top: 0;
+}
+.h3, h3 {
+    font-size: calc(1.3rem + .6vw);
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--bs-gutter-x) / -2);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-top: calc(var(--bs-gutter-y)* -1);
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y)* -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+.section-07-map .right .excerpt {
+    line-height: 24px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    padding-left: 33px;
+    position: relative;
+}
+
+.section-07-map .right .excerpt .line {
+    border-left: .5px dashed #4d4aef;
+    height: calc(100% - 16px);
+    left: 0;
+    position: absolute;
+    top: 6px;
+    z-index: 1;
+}
+
+.tour-detail .section-08 .right .h2, .tour-detail .section-08 .right h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 35px;
+}
+
+.section-08 .right h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+.flight-hotel-detail .section-08 .h2, .flight-hotel-detail .section-08 h2 {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+h2, h3 {
+    font-size: 20px;
+    line-height: 40px;
+}
+.h2, h2 {
+    font-size: calc(1.325rem + .9vw);
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+    margin-top: 0;
+}
+.h2, h2 {
+    font-size: calc(1.325rem + .9vw);
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.tour-detail .section-08 .right .table-price {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 25px 20px;
+}
+
+.section-08 .right .table-price {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 25px 20px;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table {
+    caption-side: bottom;
+}
+table {
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: 0 solid;
+    border-color: inherit;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: 0 solid;
+    border-color: inherit;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+
+.tour-detail .section-08 .right .table-price .l1 {
+    width: 290px;
+}
+
+.tour-detail .section-08 .right .table-price tr td, .tour-detail .section-08 .right .table-price tr th {
+    padding: 10px 0;
+}
+.tour-detail .section-08 .right .table-price tr th {
+    font-weight: 700;
+}
+.section-08 .right .table-price .l1 {
+    width: 290px;
+}
+td, th {
+    padding: 0;
+}
+tbody, td, tfoot, th, thead, tr {
+    border: 0 solid;
+    border-color: inherit;
+}
+th {
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+th {
+    text-align: inherit;
+    text-align: -webkit-match-parent;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+    unicode-bidi: isolate;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border: 0 solid;
+    border-color: inherit;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+    border-color: inherit;
+}
+
+.tour-detail .section-08 .right .table-price tr.total td {
+    font-weight: 700;
+}
+
+.tour-detail .section-08 .right .table-price tr td, .tour-detail .section-08 .right .table-price tr th {
+    padding: 10px 0;
+}
+.section-08 .right .table-price tr td {
+    padding: 10px 0;
+}
+td, th {
+    padding: 0;
+}
+tbody, td, tfoot, th, thead, tr {
+    border: 0 solid;
+    border-color: inherit;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+table {
+    caption-side: bottom;
+}
+table {
+    caption-side: bottom;
+    border-collapse: collapse;
+}
+user agent stylesheet
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+
+.tour-detail .section-08 .right .table-price tr.total td {
+    font-weight: 700;
+}
+
+.tour-detail .section-08 .right .table-price tr .t-price {
+    color: rgb(253, 196, 50);
+}
+.tour-detail .section-08 .right .table-price tr td, .tour-detail .section-08 .right .table-price tr th {
+    padding: 10px 0;
+}
+.section-08 .right .table-price tr .t-price {
+    color: rgb(253, 196, 50);
+}
+.section-08 .right .table-price tr td {
+    padding: 10px 0;
+}
+td, th {
+    padding: 0;
+}
+tbody, td, tfoot, th, thead, tr {
+    border: 0 solid;
+    border-color: inherit;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+}
+
+.tour-detail .section-08 .right .table-price tr.total td {
+    font-weight: 700;
+}
+
+.tour-detail .section-08 .right .table-price tr td, .tour-detail .section-08 .right .table-price tr th {
+    padding: 10px 0;
+}
+.section-08 .right .table-price tr td {
+    padding: 10px 0;
+}
+td, th {
+    padding: 0;
+}
+tbody, td, tfoot, th, thead, tr {
+    border: 0 solid;
+    border-color: inherit;
+}
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+td {
+    display: table-cell;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+

@@ -1,0 +1,159 @@
+.table {
+    margin-bottom: 0px;
+}
+
+
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #e6e6f2;
+}
+
+.table thead th,
+
+.table .table-bordered {
+    border: 1px solid #e6e6f2;
+}
+
+.table-bordered td,
+.table-bordered th {
+    border: 1px solid #e6e6f2;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(230, 230, 242, .5);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(230, 230, 242, .5);
+}
+
+.table th,
+.table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* You can also use 'clip' if you don't want an ellipsis (...) */
+    min-width: 100px;
+    /* Set a reasonable minimum width */
+}
+
+.card-body-dashboard {
+    margin: 20px;
+}
+
+.accrodion-regular .card-body-dashboard {
+    margin-top: -1px;
+}
+
+.accrodion-outline .card-body-dashboard {
+    border: 1px solid #d9d9e3;
+    margin-top: -1px;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.pageheader-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.row-with-margin {
+    margin-bottom: 20px;
+}
+
+.cd-timeline__content:after {
+    /* clearfix */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.campaign-table {}
+
+.campaign-table .dropdown-toggle::after {
+    display: none;
+}
+
+.cd-timeline__content:after {
+    /* clearfix */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.nestable-lists {
+    display: block;
+    clear: both;
+    padding: 30px 0;
+    width: 100%;
+    border: 0;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+}
+
+#nestable-menu {
+    padding: 0;
+    margin: 20px 0;
+}
+
+#nestable-output,
+#nestable2-output {
+    width: 100%;
+    height: 7em;
+    font-size: 0.75em;
+    line-height: 1.333333em;
+    font-family: Consolas, monospace;
+    padding: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+#nestable2 .dd-handle {}
+
+#nestable2 .dd-handle:hover {}
+
+#nestable2 .dd-item>button:before {}
+
+.dd-hover>.dd-handle {
+    background: #5969ff !important;
+}
+
+
+/**
+* Nestable Draggable Handles
+*/
+
+.email-filters {
+    padding: 20px;
+    border-bottom: 1px solid #e6e6f2;
+    background-color: #fff;
+    display: table;
+    width: 100%;
+    border-top: 1px solid #e6e6f2;
+}
+
+.email-filters>div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.email-list-item {
+    border-bottom: 1px solid #e6e6f2;
+    padding: 10px 20px;
+    display: table;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    background-color: #fcfcff;
+    font-size: 14px;
+}
+
+.email-list-detail {
+    vertical-align: top;
+    display: table-cell;
+}
+
+
