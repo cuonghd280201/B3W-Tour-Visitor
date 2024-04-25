@@ -240,12 +240,12 @@ const handlePaymentVNPAYClick = async () => {
                         <p
                           style={{ fontSize: 18, marginBottom: 5 }}
                         >
-                          Tiền trả:<b> {orderDetail?.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</b>
+                          Tiền đã thanh toán:<b> {orderDetail?.paid.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</b>
                         </p>
                         <p
                           style={{ fontSize: 18, marginBottom: 5 }}
                         >
-                          Số tiền thanh toán: <b>{orderDetail?.paid.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} </b>
+                          Số tiền cần thanh toán: <b>{orderDetail?.amount.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} </b>
                         </p>
                         <p
                           style={{ fontSize: 18, marginBottom: 5 }}
