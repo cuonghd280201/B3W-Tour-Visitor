@@ -111,7 +111,7 @@ const NavBarWebStaff = () => {
                                         />
                                     </div>
                                     <div className="me-1 d-flex flex-column align-items-center">
-                                        <span className="fs-18">{user.email}</span>
+                                        {/* <span className="fs-18">{user.email}</span> */}
                                     </div>
                                 </DropdownToggle>
                                 <DropdownMenu

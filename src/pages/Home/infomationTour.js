@@ -99,7 +99,8 @@ const InfomationTour = () => {
             toast.success("Tạo Thông Tin Khách Hàng Thành Công");
             navigate("/payment");
         } catch (error) {
-            toast.error("Thất Bại!");
+            toast.error("Bạn phải đăng nhập để sử dụng tính năng này!");
+            navigate("/login");
             console.error("Error creating tour order:", error);
         }
     };
@@ -384,11 +385,7 @@ const InfomationTour = () => {
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th className="l1">
-                                                    <i className="fal fa-users me-1" id="AmoutPerson" />Hành khách</th>
-                                                <th className="l2  text-right">
-                                                    {tourDetailCustomer?.price?.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}
-                                                </th>
+                                             
                                             </tr>
                                         </thead>
                                         <tbody>

@@ -9,8 +9,8 @@ const { Option } = Select;
 const Step1Form = ({ formData, onNext }) => {
     const [form] = Form.useForm();
     const [uploadedImageUrl, setUploadedImageUrl] = useState(formData.coverImage);
-    const [loading, setLoading] = useState(true); 
-    const [error, setError] = useState(null); 
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const handleSubmit = (values) => {
         values.coverImage = uploadedImageUrl;
@@ -22,17 +22,17 @@ const Step1Form = ({ formData, onNext }) => {
         form.setFieldsValue({ coverImage: url });
     };
 
-    const [cities, setCities] = useState([]); 
+    const [cities, setCities] = useState([]);
     useEffect(() => {
         const fetchDataCity = async () => {
             try {
                 const response = await tourServices.getAllCity();
-                setCities(response.data.data); 
-                setLoading(false); 
+                setCities(response.data.data);
+                setLoading(false);
             } catch (err) {
                 // Handle error and set error state
                 setError("Error fetching city data");
-                setLoading(false); 
+                setLoading(false);
             }
         };
 
@@ -65,8 +65,18 @@ const Step1Form = ({ formData, onNext }) => {
                 <Form.Item
                     label="Nơi bắt đầu"
                     name="starLocation"
-                    rules={[{ required: true, message: 'Vui lòng chọn nơi bắt đầu!' }]}
-                >
+                    rules={[
+                        { required: true, message: 'Vui lòng chọn nơi bắt đầu!' },
+                        // Custom validation rule to ensure start location and end location are not the same
+                        ({ getFieldValue }) => ({
+                            validator(_, value) {
+                                if (value === getFieldValue('endLocation')) {
+                                    return Promise.reject(new Error('Nơi bắt đầu và điểm đến không được giống nhau!'));
+                                }
+                                return Promise.resolve();
+                            }
+                        }),
+                    ]}      >
                     <Select
                         placeholder="Chọn nơi bắt đầu"
                         onChange={handleStartLocationChange} // Handle start location change
@@ -83,7 +93,17 @@ const Step1Form = ({ formData, onNext }) => {
                 <Form.Item
                     label="Điểm Đến"
                     name="endLocation"
-                    rules={[{ required: true, message: 'Vui lòng chọn nơi kết thúc!' }]}
+                    rules={[
+                        { required: true, message: 'Vui lòng chọn điểm đến!' },
+                        ({ getFieldValue }) => ({
+                            validator(_, value) {
+                                if (value === getFieldValue('startLocation')) {
+                                    return Promise.reject(new Error('Nơi bắt đầu và điểm đến không được giống nhau!'));
+                                }
+                                return Promise.resolve();
+                            }
+                        }),
+                    ]}
                 >
                     <Select
                         placeholder="Chọn nơi kết thúc"

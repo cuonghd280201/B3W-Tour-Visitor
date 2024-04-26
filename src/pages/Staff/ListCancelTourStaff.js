@@ -74,20 +74,40 @@ const ListCancelTourStaff = () => {
     };
 
     const handleCancel = () => {
+        handleRejectCancelOrder(orderIdToDelete);
         setIsModalVisible(false);
         setOrderIdToDelete(null);
     };
 
     const handleCancelOrder = async (orderId) => {
         try {
-            const response = await cancelServices.staffCancelOrder(orderId);
-
+            const response = await cancelServices.staffCancelOrder(orderId, 1);
+            console.log("Cancel", response);
             if (response.status === 200) {
                 toast.success("Chấp nhận yều cầu hủy chuyến đi thành công!");
                 fetchOrderStatusData();
 
             } else {
                 toast.success("Chấp nhận yều cầu hủy chuyến đi thành công!");
+                fetchOrderStatusData();
+
+            }
+        } catch (error) {
+            console.error("Error canceling order:", error);
+            toast.error("An error occurred while canceling the order.");
+        }
+    };
+
+    const handleRejectCancelOrder = async (orderId) => {
+        try {
+            const response = await cancelServices.staffCancelOrder(orderId, 0);
+            console.log("Reject Cancel", response);
+            if (response.status === 200) {
+                toast.success("Từ chối yều cầu hủy chuyến đi thành công!");
+                fetchOrderStatusData();
+
+            } else {
+                toast.success("Từ chối yều cầu hủy chuyến đi thành công!");
                 fetchOrderStatusData();
 
             }

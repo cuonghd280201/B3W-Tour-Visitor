@@ -59,6 +59,7 @@ export default {
             customerCancel:"/order/cancel/${orderId}",
             getAllOrderStatus:"/dashboard/orderStatus",
             staffCancel:"/staff/order/cancel/${orderId}",
+            value:"value=${value}",
         },
 
         admin:{

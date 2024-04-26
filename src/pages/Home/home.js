@@ -21,11 +21,13 @@ const Home = () => {
     const [error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1); // Initialize currentPage state
     const [pageSize, setPageSize] = useState(6); // Initialize pageSize state
-    const [totalPages, setTotalPages] = useState(pageSize); // Add state for total pages
+    const [totalPages, setTotalPages] = useState(); // Add state for total pages
     const [loading, setLoading] = useState(true);
 
+
+
     const calculatePageRange = (currentPage, totalPages) => {
-        const pageRangeSize = 6;
+        const pageRangeSize = totalPages;
         let startPage = Math.max(1, currentPage - Math.floor(pageRangeSize / 2));
         let endPage = startPage + pageRangeSize - 1;
         if (endPage > totalPages) {
@@ -73,6 +75,7 @@ const Home = () => {
             const response = await tourServices.getAllTourAndPaging(currentPage - 1, pageSize, sortBy, sortOrder);
             console.log("Response:", response);
             setTours(response.data.data);
+            setTotalPages(response.data.pagination.totalPage)
 
         } catch (error) {
             console.error("Error fetching tours:", error);

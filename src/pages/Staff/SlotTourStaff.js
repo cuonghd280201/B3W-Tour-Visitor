@@ -145,7 +145,7 @@ const SlotTourStaff = () => {
                                                         </td>
                                                         <td style={{ padding: "15px" }}> {tourDetailCustomer.title}</td>
                                                         <td style={{ padding: "15px" }}> {tourTime.startTime}</td>
-                                                        <td style={{ padding: "15px" }}> {tourDetailCustomer.price}</td>
+                                                        <td style={{ padding: "15px" }}> {tourDetailCustomer.price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}</td>
                                                         <td style={{ padding: "15px" }}> {tourTime.slotNumber}</td>
                                                     </tr>
                                                 ))}

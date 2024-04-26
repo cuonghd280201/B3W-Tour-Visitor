@@ -27,14 +27,16 @@ const customerCancel = async (orderId) => {
     }
 };
 
-const staffCancelOrder = async (orderId) => {
+const staffCancelOrder = async (orderId, value) => {
     const serviceUrl =
       urlConstant.endpoint.cancel.staffCancel.replace(
         "${orderId}",
         orderId
       );
+    const valueUrl = urlConstant.endpoint.cancel.value.replace("${value}", value);
+    const fullUrl = serviceUrl + "?" + valueUrl;
     const response = await axiosLocalHost.sendAuthorizedRequest(
-      serviceUrl,
+      fullUrl,
       "POST"
     );
     return response;
