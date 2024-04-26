@@ -38,12 +38,21 @@ const Dashboard = () => {
     const response = await adminServices.getRevenue(days);
     const { data } = response.data;
 
-    const dates = data.map((element) => element.date);
-    setDates(dates);
+    const formattedData = data.map((item) => ({
+      date: item.date,
+      money: parseFloat(item.money), // Convert money to a number
+    }));
 
-    const revenues = data.map((element) => element.money);
-    setRevenues(revenues);
+    const dates = formattedData.map((item) => item.date);
+    const formattedRevenues = formattedData.map((item) => ({
+      x: item.date,
+      y: item.money,
+    }));
+
+    setDates(dates);
+    setRevenues(formattedRevenues);
   };
+
 
   const handleRevenueDatesChange = async (value) => {
     const selectedDays = parseInt(value); // Convert the selected value to a number
@@ -162,26 +171,35 @@ const Dashboard = () => {
               options={{
                 chart: {
                   id: "basic-bar",
+                  
                 },
                 xaxis: {
                   categories: dates,
                 },
-                plotOptions: {
-                  bar: {
-                    horizontal: false, // Ensure bars are vertical
-                    columnWidth: "25%", // Adjust the width of the bars
+                yaxis: {
+                  labels: {
+                    formatter: function (value) {
+                      return new Intl.NumberFormat("vi-VN", {
+                        style: "currency",
+                        currency: "VND",
+                      }).format(value);
+                    },
                   },
                 },
+                plotOptions: {
+                  bar: {
+                    columnWidth: "22%",
+                  },
+                }
               }}
               series={[
                 {
-                  name: "series-1",
+                  name: "Doanh thu",
                   data: revenues,
-                  color: "#6050DC",
                 },
               ]}
               type="bar"
-              width="1000"
+              width="100%"
             />
           </Content>
         </div>

@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { Layout, Table, Select } from "antd";
+import { Layout, Table, Select, Button, Modal } from "antd";
 import NavBarWebAdmin from "./Navbar/NavBarWebAdmin";
 import SiderBarWebAdmin from "./SlideBar/SiderBarWebAdmin";
 import adminServices from "../../services/admin.services";
+import orderServices from "../../services/order.services";
 
 const { Content } = Layout;
 const { Column } = Table;
 const { Option } = Select;
 const page = {
-  pageSize: 5, 
+  pageSize: 5,
 };
 
 const ListOrderStatus = () => {
   const [orderStatus, setOrderStatus] = useState("DONE"); // State to store selected order status
   const [orderStatusData, setOrderStatusData] = useState([]);
-  const [sortOrderMap, setSortOrderMap] = useState({ DONE: "asc", NOT_DONE: "asc", WAITING_CANCEL: "asc", CANCEL: "asc" });
+  const [sortOrderMap, setSortOrderMap] = useState({
+    DONE: "asc",
+    NOT_DONE: "asc",
+    WAITING_CANCEL: "asc",
+    CANCEL: "asc",
+  });
 
   useEffect(() => {
     fetchOrderStatusData();
@@ -36,7 +42,142 @@ const ListOrderStatus = () => {
     setOrderStatus(value); // Update selected order status
   };
 
+  const getDetailOrder = async (orderId) => {
+    try {
+      const response = await orderServices.getDetailOrder(orderId);
 
+      Modal.info({
+        title: `Thông tin đơn hàng`,
+        width: "80%", // Set the width of the modal (adjust as needed)
+        centered: true, // Center the modal on the screen
+        content: (
+          <div style={{ padding: "20px" }}>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Tiền đơn đặt: {formatCurrency(response.data.data.price)}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Đã thanh toán: {formatCurrency(response.data.data.paid)}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Số tiền thanh toán còn lại:{" "}
+              {formatCurrency(response.data.data.amount)}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Tiền đã hoàn trả: {formatCurrency(response.data.data.refund)}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Trạng thái đơn hàng: {response.data.data.orderStatus}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Ngày tạo đơn: {response.data.data.createDate}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Ngày cập nhật đơn: {response.data.data.updateDate}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Nhân viên duyệt:{" "}
+              {response.data.data.tourDTO?.updateBy === null
+                ? "Chưa có"
+                : response.data.data.tourDTO.updateBy}
+            </p>
+
+            <h5
+              style={{
+                marginBottom: "12px",
+                fontSize: "18px",
+                fontWeight: "bold",
+              }}
+            >
+              Thông tin ngày đi
+            </h5>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Mã thời gian chuyến đi: {response.data.data.tourTimeDTO.id}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Ngày bắt đầu: {response.data.data.tourTimeDTO.startDate}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Ngày kết thúc: {response.data.data.tourTimeDTO.endDate}
+            </p>
+
+            <h5
+              style={{
+                marginBottom: "12px",
+                fontSize: "18px",
+                fontWeight: "bold",
+              }}
+            >
+              Danh sách khách hàng
+            </h5>
+            {response.data.data &&
+              response.data.data.tourVisitorDTOList.map((tourVist, index) => (
+                <div key={index} style={{ marginBottom: "10px" }}>
+                  <p style={{ marginBottom: "4px", fontSize: "14px" }}>
+                    Tên: {tourVist.name}
+                  </p>
+                  <p style={{ marginBottom: "4px", fontSize: "14px" }}>
+                    Số điện thoại: {tourVist.phone}
+                  </p>
+                  <p style={{ marginBottom: "4px", fontSize: "14px" }}>
+                    Ngày sinh: {tourVist.dateOfBirth}
+                  </p>
+                </div>
+              ))}
+
+            <h5
+              style={{
+                marginBottom: "12px",
+                fontSize: "18px",
+                fontWeight: "bold",
+              }}
+            >
+              Thông tin chuyến đi
+            </h5>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Tên Chuyến đi: {response.data.data.tourDTO.title}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Giá chuyến đi: {formatCurrency(response.data.data.tourDTO.price)}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Nơi đến: {response.data.data.tourDTO.endLocation}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Mã chuyến đi: {response.data.data.tourDTO.code}
+            </p>
+
+            <h5
+              style={{
+                marginBottom: "12px",
+                fontSize: "18px",
+                fontWeight: "bold",
+              }}
+            >
+              Thông tin người đặt
+            </h5>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Tên người đặt: {response.data.data.userDTO.name}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Số điện thoại: {response.data.data.userDTO.phone}
+            </p>
+            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
+              Email: {response.data.data.userDTO.email}
+            </p>
+          </div>
+        ),
+      });
+    } catch (error) {
+      console.error("Error fetching order details:", error);
+    }
+  };
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    }).format(value);
+  };
   const getStatusColor = (status) => {
     switch (status) {
       case "DONE":
@@ -150,7 +291,6 @@ const ListOrderStatus = () => {
               title="Tổng tiền thanh toán"
               dataIndex="amount"
               key="amount"
-        
             />
             <Column
               title="Tiền hoàn trả"
@@ -181,6 +321,16 @@ const ListOrderStatus = () => {
                 >
                   {text}
                 </span>
+              )}
+            />
+
+            <Column
+              title="Chi tiết đơn hàng"
+              key="action"
+              render={(text, record) => (
+                <Button onClick={() => getDetailOrder(record.id)}>
+                  Xem chi tiết
+                </Button>
               )}
             />
           </Table>
