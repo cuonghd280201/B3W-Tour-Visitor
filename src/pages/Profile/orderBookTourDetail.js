@@ -516,24 +516,7 @@ const handlePaymentVNPAYClick = async () => {
                   </table>
                 </div>
               </div>
-              <Link to="/listTourStaff" style={{ textDecoration: "none" }}>
-                <button
-                  style={{
-                    backgroundColor: "#ff4d4f",
-                    color: "white",
-                    border: "none",
-                    borderRadius: "5px",
-                    padding: "10px 20px",
-                    marginLeft: "10px",
-                    fontSize: "16px",
-                    cursor: "pointer",
-                    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                    transition: "background-color 0.3s",
-                  }}
-                >
-                  Trở về
-                </button>
-              </Link>
+              
             </div>
           </div>
         </div>

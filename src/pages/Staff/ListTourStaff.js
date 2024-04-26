@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Layout, Input, Button, Select } from "antd";
-import { Row, Col } from "reactstrap";
+import { Row, Col, TabContent, TabPane } from "reactstrap";
 import {
   LeftOutlined,
   RightOutlined,
@@ -69,6 +69,69 @@ const ListTourStaff = () => {
     return (price).toLocaleString('vi-VN').replace(/,/g, '.');
   };
 
+  //city
+
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    const fetchDataCity = async () => {
+      try {
+        const response = await tourServices.getAllCity();
+        setCities(response.data.data);
+        setLoading(false);
+      } catch (err) {
+        setError("Error fetching city data");
+        setLoading(false);
+      }
+    };
+
+    fetchDataCity();
+  }, []);
+
+
+  //Searh 
+
+
+  const [keyword, setKeyword] = useState('');
+  const [endLocation, setEndLocation] = useState('');
+  const [minPrice, setMinPrice] = useState();
+  const [maxPrice, setMaxPrice] = useState();
+  const [startDate, setStartDate] = useState(null);
+
+
+  const handleMinPriceChange = (e) => {
+    setMinPrice(Number(e.target.value));
+  };
+
+  const handleMaxPriceChange = (e) => {
+    setMaxPrice(Number(e.target.value));
+  };
+
+  const handleDateChange = (event) => {
+    const dateValue = event.target.value;
+    const formattedDate = formatDate(dateValue);
+    setStartDate(formattedDate);
+  };
+
+  const formatDate = (dateString) => {
+    const [year, month, day] = dateString.split('-');
+    return `${day}-${month}-${year}`;
+  };
+
+  const fetchData = async () => {
+    try {
+      const sortBy = 'title';
+      const sortOrder = 'desc';
+      const decodedKeyword = decodeURIComponent(keyword);
+      const response = await tourServices.searchAllTour(currentPage - 1, pageSize, sortBy, sortOrder, decodedKeyword, endLocation, minPrice, maxPrice, startDate);
+      setTours(response.data.data);
+      console.log('searchData:', response);
+
+    } catch (error) {
+      console.error('Lỗi khi gọi API:', error);
+    }
+  };
+
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <SiderBarWebStaff choose={"menu-key/1"} />
@@ -121,11 +184,104 @@ const ListTourStaff = () => {
                   Tạo chuyến đi mới
                 </a>
 
-                
+
               </span>
             </div>
 
-            <div className="row row-with-margin">
+              <div className="sidebar-wrap tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
+                <Row>
+                  <Col>
+                    <TabContent activeTab="v-pills-1">
+                      <TabPane tabId="v-pills-1">
+                        <form className="search-destination">
+                          <Row>
+                            <Col md={2} className="form-group">
+                              <Input
+                                type="text"
+                                value={keyword}
+                                onChange={(e) => setKeyword(e.target.value)}
+                                placeholder="Nhập từ khóa..."
+                                className="form-control"
+                              />
+                            </Col>
+                            <Col md={2} className="form-group">
+                              <div className="select-wrap one-third">
+                                <div className="icon">
+                                  <span className="ion-ios-arrow-down" />
+                                </div>
+                                <select
+                                  name="endLocation"
+                                  id="endLocation"
+                                  className="form-control"
+                                  value={endLocation}
+                                  onChange={(e) => setEndLocation(e.target.value)}
+                                >
+                                  <option value="">Điểm Kết Thúc</option>
+                                  {cities.map((city, index) => (
+                                    <option key={index} value={city.name}>
+                                      {city.name}
+                                    </option>
+                                  ))}
+                                </select>
+                              </div>
+                            </Col>
+                            <Col md={2} className="form-group">
+                              <Input type="date" onChange={handleDateChange} className="form-control" />
+                            </Col>
+                            <Col md={4} className="form-group">
+                                    <div className="range-slider">
+                                        <span className="d-flex align-items-center">
+                                            <Input
+                                                type="number"
+                                                value={minPrice}
+                                                min={0}
+                                                max={100000000}
+                                                onChange={handleMinPriceChange}
+                                                className="form-control mr-2"
+                                            />
+                                            -
+                                            <Input
+                                                type="number"
+                                                value={maxPrice}
+                                                min={0}
+                                                max={100000000}
+                                                onChange={handleMaxPriceChange}
+                                                className="form-control ml-2"
+                                            />
+                                        </span>
+                                        <Input
+                                            type="range"
+                                            value={minPrice}
+                                            min={0}
+                                            max={100000000}
+                                            step={500000}
+                                            onChange={handleMinPriceChange}
+                                            className="form-control mt-2"
+                                        />
+                                        <Input
+                                            type="range"
+                                            value={maxPrice}
+                                            min={0}
+                                            max={100000000}
+                                            step={500000}
+                                            onChange={handleMaxPriceChange}
+                                            className="form-control mt-2"
+                                        />
+                                    </div>
+                                </Col>
+                            <Col md={2} className="form-group">
+                              <Button color="primary" onClick={fetchData} className="w-100">
+                                Tìm kiếm
+                              </Button>
+                            </Col>
+                          </Row>
+                        </form>
+                      </TabPane>
+                    </TabContent>
+                  </Col>
+                </Row>
+              </div>
+            <div className="row">
               <div className="col-xl-12 col-lg-3 col-md-12 col-sm-12 col-12">
                 <div className="card border-5 border-top border-success-subtle">
                   <div className="card-body-dashboard">

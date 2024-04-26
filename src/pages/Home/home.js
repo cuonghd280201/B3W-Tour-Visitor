@@ -89,8 +89,8 @@ const Home = () => {
 
     const [keyword, setKeyword] = useState('');
     const [endLocation, setEndLocation] = useState('');
-    const [minPrice, setMinPrice] = useState(0);
-    const [maxPrice, setMaxPrice] = useState(100000000);
+    const [minPrice, setMinPrice] = useState();
+    const [maxPrice, setMaxPrice] = useState();
     const [startDate, setStartDate] = useState(null);
 
 
