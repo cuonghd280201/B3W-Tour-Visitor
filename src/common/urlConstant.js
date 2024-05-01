@@ -37,7 +37,6 @@ export default {
         },
         payment: {
             checkout: "/payment/check-out?uuid=${uuid}",
-
             transaction: "/dashboard/transactions",
             paging: "pageNumber=${currentPage}&pageSize=${pageSize}",
             sorting: "sortBy=${sortBy}&sortOrder=${sortOrder}",

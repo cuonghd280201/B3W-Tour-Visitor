@@ -59,7 +59,7 @@ const ListTransaction = () => {
 
   const handleSort = (value) => {
     const sortedPayments = [...filteredPayments]; // Create a copy of the filtered payments array
-    
+
     // Sort the payments based on the amount
     sortedPayments.sort((a, b) => {
       if (value === "asc") {
@@ -68,7 +68,7 @@ const ListTransaction = () => {
         return b.amount - a.amount; // Descending order
       }
     });
-  
+
     // Update the state with the sorted payments
     setFilteredPayments(sortedPayments);
   };
@@ -136,7 +136,7 @@ const ListTransaction = () => {
                 <Select
                   defaultValue={sortOrder}
                   onChange={handleSort} // Handle sorting order change
-                  style={{ width: 180, marginBottom: 16, marginLeft:600 }}
+                  style={{ width: 180, marginBottom: 16, marginLeft: 600 }}
                 >
                   <Option value="asc">Tổng tiền tăng dần</Option>
                   <Option value="desc">Tổng tiền giảm dần</Option>
@@ -167,6 +167,11 @@ const ListTransaction = () => {
                     key="email"
                   />
                   <Column
+                    title="Thời gian giao dịch"
+                    dataIndex="createDate"
+                    key="createDate"
+                  />
+                  <Column
                     title="Tổng tiền"
                     dataIndex="amount"
                     key="amount"
@@ -179,11 +184,13 @@ const ListTransaction = () => {
                       </span>
                     )}
                   />
+
                   <Column
                     title="Mô tả"
                     dataIndex="description"
                     key="description"
                   />
+
                   <Column
                     title="Tình trạng giao dịch"
                     dataIndex="transactionStatus"
