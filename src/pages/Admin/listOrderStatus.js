@@ -75,10 +75,10 @@ const ListOrderStatus = () => {
               Ngày cập nhật đơn: {response.data.data.updateDate}
             </p>
             <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Nhân viên duyệt:{" "}
-              {response.data.data.tourDTO?.updateBy === null
+              Nhân viên duyệt hoàn tiền:{" "}
+              {response.data.data?.updateBy === null
                 ? "Chưa có"
-                : response.data.data.tourDTO.updateBy}
+                : response.data.data.updateBy}
             </p>
 
             <h5

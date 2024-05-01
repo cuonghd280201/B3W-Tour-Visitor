@@ -162,7 +162,7 @@ const ListTransaction = () => {
                 >
                   <Column title="Mã đơn hàng" dataIndex="code" key="code" />
                   <Column
-                    title="Mail"
+                    title="Mail người hoàn tiền"
                     dataIndex={["userDTO", "email"]}
                     key="email"
                   />

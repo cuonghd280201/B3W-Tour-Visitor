@@ -34,6 +34,7 @@ import HistoryPayment from "../pages/Profile/historyPayment";
 import ListVisitorTourByTour from "../pages/Staff/ListVisitorTourByTour";
 import Forbidden from "../pages/Error/error";
 import PaymentSuccess from "../pages/Payment/paymentSuccess";
+import ListCancelTourAdmin from "../pages/Admin/listCancelTourAdmin";
 
 
 const Home = React.lazy(() => import("../pages/Home/home"));
@@ -88,6 +89,7 @@ const authRoutes = [
   { path: "/listTourVisitorStaff", component: <ListTourVitorStaff/>},
   { path: "/listTourVisitorDetailStaff", component: <ListTourVisitorDetailStaff/>},
   { path: "/listVisitorTourByTour", component: <ListVisitorTourByTour/>},
+  { path: "/listCancelTourAdmin", component: <ListCancelTourAdmin/>},
 
 
 

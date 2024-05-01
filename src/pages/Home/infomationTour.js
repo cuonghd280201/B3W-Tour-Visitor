@@ -65,42 +65,47 @@ const InfomationTour = () => {
     const location = useLocation();
 
     // Create Order 
+    const token = localStorage.getItem('token');
 
 
     const createOrderTour = async () => {
         try {
-            const tourTimeId = tourDetailCustomer?.tourTimeSet[0]?.id;
-            const passengers = [];
+            if (token != null) {
+                const tourTimeId = tourDetailCustomer?.tourTimeSet[0]?.id;
+                const passengers = [];
 
-            for (let i = 0; i < adultCount; i++) {
-                const name = document.getElementById(`adult-name-${i}`).value;
-                const phone = document.getElementById(`adult-phone-${i}`).value;
-                const idCard = document.getElementById(`adult-idCard-${i}`).value;
-                const rawDateOfBirth = document.getElementById(`adult-dateOfBirth-${i}`).value;
-                const formattedDateOfBirth = rawDateOfBirth.split('-').reverse().join('-');
-                const type = 'ADULT';
-                passengers.push({ name, phone, idCard, type, dateOfBirth: formattedDateOfBirth });
+                for (let i = 0; i < adultCount; i++) {
+                    const name = document.getElementById(`adult-name-${i}`).value;
+                    const phone = document.getElementById(`adult-phone-${i}`).value;
+                    const idCard = document.getElementById(`adult-idCard-${i}`).value;
+                    const rawDateOfBirth = document.getElementById(`adult-dateOfBirth-${i}`).value;
+                    const formattedDateOfBirth = rawDateOfBirth.split('-').reverse().join('-');
+                    const type = 'ADULT';
+                    passengers.push({ name, phone, idCard, type, dateOfBirth: formattedDateOfBirth });
+                }
+
+                for (let i = 0; i < childCount; i++) {
+                    const name = document.getElementById(`child-name-${i}`).value;
+                    const phone = document.getElementById(`child-phone-${i}`).value;
+                    const rawDateOfBirth = document.getElementById(`child-dateOfBirth-${i}`).value;
+                    const formattedDateOfBirth = rawDateOfBirth.split('-').reverse().join('-');
+                    const type = 'BABY';
+
+
+                    passengers.push({ name, phone: null, idCard: null, type, dateOfBirth: formattedDateOfBirth });
+                }
+
+                const response = await orderServices.createOrder(tourTimeId, paid, passengers); // Pass the paid value
+                // const responseData = response.data[0];
+                localStorage.setItem('orderResponse', response.data);
+                toast.success("Tạo Thông Tin Khách Hàng Thành Công");
+                navigate("/payment");
+            } else {
+                toast.error("Bạn phải đăng nhập để sử dụng tính năng này!");
+                navigate("/login");
             }
-
-            for (let i = 0; i < childCount; i++) {
-                const name = document.getElementById(`child-name-${i}`).value;
-                const phone = document.getElementById(`child-phone-${i}`).value;
-                const rawDateOfBirth = document.getElementById(`child-dateOfBirth-${i}`).value;
-                const formattedDateOfBirth = rawDateOfBirth.split('-').reverse().join('-');
-                const type = 'BABY';
-
-
-                passengers.push({ name, phone: null, idCard: null, type, dateOfBirth: formattedDateOfBirth });
-            }
-
-            const response = await orderServices.createOrder(tourTimeId, paid, passengers); // Pass the paid value
-           // const responseData = response.data[0];
-            localStorage.setItem('orderResponse', response.data);
-            toast.success("Tạo Thông Tin Khách Hàng Thành Công");
-            navigate("/payment");
         } catch (error) {
-            toast.error("Bạn phải đăng nhập để sử dụng tính năng này!");
-            navigate("/login");
+            toast.error("Tạo thông tin thất bại!");
             console.error("Error creating tour order:", error);
         }
     };
@@ -218,7 +223,7 @@ const InfomationTour = () => {
             <section className="ftco-section ftco-counter img" id="" style={{ backgroundImage: 'url(images/bg_1.jpg)' }} data-stellar-background-ratio="0.5">
                 <div className="container">
                     <div className="row justify-content-center">
-                       
+
                     </div>
                 </div>
             </section>
@@ -297,7 +302,7 @@ const InfomationTour = () => {
                                                         const newAdultCount = parseInt(e.target.value) || 0;
                                                         if (newAdultCount < 0) {
                                                             e.target.value = adultCount;
-                                                            toast.error("Số lượng người lớn không thể âm."); 
+                                                            toast.error("Số lượng người lớn không thể âm.");
                                                             return;
                                                         }
                                                         if (newAdultCount + childCount > tourDetailCustomer?.tourTimeSet[0]?.slotNumber) {
@@ -306,7 +311,7 @@ const InfomationTour = () => {
                                                         } else {
                                                             setAdultCount(newAdultCount);
                                                         }
-                                                    }}                                                    
+                                                    }}
                                                 />
                                             </div>
                                         </div>
@@ -323,7 +328,7 @@ const InfomationTour = () => {
                                                         const newChildCount = parseInt(e.target.value) || 0;
                                                         if (newChildCount < 0) {
                                                             e.target.value = adultCount;
-                                                            toast.error("Số lượng người nhỏ không thể âm."); 
+                                                            toast.error("Số lượng người nhỏ không thể âm.");
                                                             return;
                                                         }
                                                         if (adultCount + newChildCount > tourDetailCustomer?.tourTimeSet[0]?.slotNumber) {
@@ -345,7 +350,7 @@ const InfomationTour = () => {
                                         <div className="title-section mb-3 title-hotel-flight-infor">Thông tin hành khách</div>
                                         {renderAdultFields()}
                                         {renderChildFields()}
-                                                                            </section>
+                                    </section>
                                 </div>
                             </section>
 
@@ -361,7 +366,7 @@ const InfomationTour = () => {
                             <div className="group-checkout">
                                 <h3>Tóm tắt chuyến đi</h3>
                                 <div className="product">
-                                    <div className="product-image"><img src={tourDetailCustomer?.coverImage} className="img-fluid" alt="image" style={{ width: '200px', height: '100px' }}  /></div>
+                                    <div className="product-image"><img src={tourDetailCustomer?.coverImage} className="img-fluid" alt="image" style={{ width: '200px', height: '100px' }} /></div>
                                     <div className="product-content">
                                         <p className="title">{tourDetailCustomer?.title} </p>
                                     </div>
@@ -385,7 +390,7 @@ const InfomationTour = () => {
                                     <table>
                                         <thead>
                                             <tr>
-                                             
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -397,7 +402,7 @@ const InfomationTour = () => {
                                             <tr className="detail">
                                                 <td>Trẻ nhỏ</td>
                                                 <td className="t-price text-right">
-                                                    {childCount} x {((tourDetailCustomer?.price)/2).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} &nbsp; &nbsp;=&nbsp; {childCount *((tourDetailCustomer?.price)/2)}&nbsp;₫
+                                                    {childCount} x {((tourDetailCustomer?.price) / 2).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })} &nbsp; &nbsp;=&nbsp; {childCount * ((tourDetailCustomer?.price) / 2)}&nbsp;₫
                                                 </td>                                            </tr>
                                             <tr className="total">
                                                 <td>Tổng tiền </td>
@@ -416,30 +421,30 @@ const InfomationTour = () => {
 
                                                 </tr>
                                                 <div className="payment-options">
-                                            <label>
-                                                <input
-                                                    type="radio"
-                                                    name="paid"
-                                                    value={50}
-                                                    checked={paid === 50}
-                                                    onChange={() => setPaid(50)}
-                                                />
-                                                Thanh toán trước 50%
-                                            </label>
-                                            <label>
-                                                <input
-                                                    type="radio"
-                                                    name="paid"
-                                                    value={100}
-                                                    checked={paid === 100}
-                                                    onChange={() => setPaid(100)}
-                                                />
-                                                Thanh toán trước 100%
-                                            </label>
-                                        </div>
+                                                    <label>
+                                                        <input
+                                                            type="radio"
+                                                            name="paid"
+                                                            value={50}
+                                                            checked={paid === 50}
+                                                            onChange={() => setPaid(50)}
+                                                        />
+                                                        Thanh toán trước 50%
+                                                    </label>
+                                                    <label>
+                                                        <input
+                                                            type="radio"
+                                                            name="paid"
+                                                            value={100}
+                                                            checked={paid === 100}
+                                                            onChange={() => setPaid(100)}
+                                                        />
+                                                        Thanh toán trước 100%
+                                                    </label>
+                                                </div>
 
-                                        {/* Button to create the tour order */}
-                                        <button className="btn btn-primary" onClick={createOrderTour}>Đặt Chuyến Đi</button>
+                                                {/* Button to create the tour order */}
+                                                <button className="btn btn-primary" onClick={createOrderTour}>Đặt Chuyến Đi</button>
                                                 {/* <Link to="/orderHistory">
                                                     <button
                                                         onClick={handlePaymentClick}
