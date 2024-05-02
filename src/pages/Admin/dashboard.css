@@ -2,8 +2,6 @@
     margin-bottom: 0px;
 }
 
-
-
 .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #e6e6f2;
@@ -41,6 +39,7 @@
 .card-body-dashboard {
     margin: 20px;
 }
+
 
 .accrodion-regular .card-body-dashboard {
     margin-top: -1px;

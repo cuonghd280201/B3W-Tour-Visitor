@@ -49,7 +49,7 @@ const ListTransaction = () => {
     const searchValue = value.toLowerCase().trim();
 
     const filtered = payments.filter((payment) => {
-      const idMatch = payment.id.toString().toLowerCase().includes(searchValue);
+      const idMatch = payment.code.toString().toLowerCase().includes(searchValue);
       const amountMatch = payment.amount.toString().includes(searchValue);
       return idMatch || amountMatch || searchValue === "";
     });
@@ -58,18 +58,15 @@ const ListTransaction = () => {
   };
 
   const handleSort = (value) => {
-    const sortedPayments = [...filteredPayments]; // Create a copy of the filtered payments array
-
-    // Sort the payments based on the amount
+    const sortedPayments = [...filteredPayments]; 
     sortedPayments.sort((a, b) => {
       if (value === "asc") {
-        return a.amount - b.amount; // Ascending order
+        return a.amount - b.amount; 
       } else {
-        return b.amount - a.amount; // Descending order
+        return b.amount - a.amount; 
       }
     });
 
-    // Update the state with the sorted payments
     setFilteredPayments(sortedPayments);
   };
 
@@ -77,8 +74,8 @@ const ListTransaction = () => {
     switch (status) {
       case "DONE":
         return "#32CD32"; // Example color for "DONE" status
-      case "NOT_DONE":
-        return "red"; // Example color for "NOT_DONE" status
+      case "REFUND":
+        return "#696969"; // Example color for "NOT_DONE" status
       case "WAITING_CANCEL":
         return "#FEBE10"; // Example color for "WAITING_CANCEL" status
       case "CANCEL":
@@ -152,7 +149,7 @@ const ListTransaction = () => {
                         <th
                           {...props}
                           style={{
-                            background: "hsl(253deg 61% 85%)",
+                            background: "linear-gradient(to top, #7B68EE, #87CEFA)",
                             border: "none",
                           }}
                         />
@@ -162,7 +159,7 @@ const ListTransaction = () => {
                 >
                   <Column title="Mã đơn hàng" dataIndex="code" key="code" />
                   <Column
-                    title="Mail người hoàn tiền"
+                    title="Mail người thực hiện"
                     dataIndex={["userDTO", "email"]}
                     key="email"
                   />
