@@ -104,7 +104,7 @@ const ListCancelTourAdmin = () => {
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <SiderBarWebStaff choose={"menu-key/6"} />
+      <SiderBarWebStaff choose={"menu-key/5"} />
       <Layout>
         <NavBarWebStaff />
         <div

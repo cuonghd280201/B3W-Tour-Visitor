@@ -89,7 +89,7 @@ const ListTransaction = () => {
   };
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      <SiderBarWebAdmin choose={"menu-key/5"}></SiderBarWebAdmin>
+      <SiderBarWebAdmin choose={"menu-key/6"}></SiderBarWebAdmin>
       <Layout>
         <NavBarWebAdmin></NavBarWebAdmin>
 

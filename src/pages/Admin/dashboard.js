@@ -93,7 +93,7 @@ const Dashboard = () => {
                     <div className="card-body">
                       <h3 className="text-muted mb-3">
                         <BiMoney className="mr-2" />
-                        Tổng tiền
+                        Tổng doanh thu
                       </h3>
                       <div className="metric-value">
                         <h4 className="text-success">
