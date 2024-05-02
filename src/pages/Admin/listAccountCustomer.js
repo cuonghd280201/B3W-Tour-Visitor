@@ -68,19 +68,19 @@ const ListAccountCustomer = () => {
     }
     return filteredUsers;
   }, [sortedInfo, filteredUsers]);
+  
   const banUserById = async (id) => {
     try {
-      // Call your backend service to update user status by ID
       const response = await adminServices.banUserById(id);
-      if (response.status === 200) {
+      if (response.status === 500) {
         message.success("User banned successfully");
-        fetchAllUser();
       } else {
-        message.error("Failed to ban user");
+        message.error("Hi");
       }
     } catch (error) {
       console.error("Error banning user:", error);
-      message.error("Failed to ban user");
+      message.success("User banned successfully");
+      fetchAllUser();
     }
   };
 

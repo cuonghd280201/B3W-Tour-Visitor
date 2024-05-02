@@ -1,4 +1,4 @@
-import {React, useEffect, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { Layout, Menu } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -8,9 +8,8 @@ import {
   faIdCardClip,
   faBuildingUser,
 } from "@fortawesome/free-solid-svg-icons";
-import {HomeOutlined,} from "@ant-design/icons";
+import { HomeOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
-
 
 const { Sider } = Layout;
 
@@ -58,21 +57,28 @@ const SiderBarWebAdmin = ({ choose }) => {
       className: "listAccountStaff",
       link: "/listAccountStaff", // Add the link property
     },
-     {
-       label: "Quản Lý Đơn hàng",
-       key: "menu-key/4",
-       icon: <FontAwesomeIcon icon={faBuildingUser} size="xl" />,
-       className: "listAccountHR",
-       link: "/listOrderStatus", // Add the link property
-     },
-     {
-      label: "Báo Cáo Giao Dịch",
+    {
+      label: "Quản Lý Đơn hàng",
+      key: "menu-key/4",
+      icon: <FontAwesomeIcon icon={faBuildingUser} size="xl" />,
+      className: "listAccountHR",
+      link: "/listOrderStatus", // Add the link property
+    },
+
+    {
+      label: "Chuyến đi bị hủy",
       key: "menu-key/5",
+      icon: <FontAwesomeIcon icon={faBuildingUser} size="xl" />,
+      className: "listCancelTourAdmin",
+      link: "/listCancelTourAdmin", // Add the link property
+    },
+    {
+      label: "Báo Cáo Giao Dịch",
+      key: "menu-key/6",
       icon: <FontAwesomeIcon icon={faBuildingUser} size="xl" />,
       className: "listTransaction",
       link: "/listTransaction", // Add the link property
     },
-   
   ];
 
   const navigate = useNavigate();
@@ -87,7 +93,7 @@ const SiderBarWebAdmin = ({ choose }) => {
         {showWeHire && (
           <div className="mb-0" id="wehire">
             <img
-            src=""
+              src=""
               alt=""
               className="logo-light"
               style={{ objectFit: "cover", width: "170px" }}
@@ -106,13 +112,12 @@ const SiderBarWebAdmin = ({ choose }) => {
               borderRadius: "10px",
             }}
           >
-             <FontAwesomeIcon
+            <FontAwesomeIcon
               icon={faAngleLeft}
               size="xl"
               color="#6546D2"
               onClick={toggleSidebar}
-              style={{ cursor: 'pointer'
-            }}
+              style={{ cursor: "pointer" }}
             />
           </div>
         ) : (
@@ -133,7 +138,7 @@ const SiderBarWebAdmin = ({ choose }) => {
               size="xl"
               color="#6546D2"
               onClick={toggleSidebar}
-              style={{ cursor: 'pointer'}}
+              style={{ cursor: "pointer" }}
             />
           </div>
         )}
@@ -147,7 +152,6 @@ const SiderBarWebAdmin = ({ choose }) => {
         onClick={handleMenuClick}
       >
         {items.map((item) => (
-         
           <Menu.Item key={item.key} icon={item.icon}>
             <Link to={item.link}>{item.label}</Link>
           </Menu.Item>
