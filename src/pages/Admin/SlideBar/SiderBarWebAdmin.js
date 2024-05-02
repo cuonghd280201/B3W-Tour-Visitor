@@ -7,6 +7,8 @@ import {
   faUserTie,
   faIdCardClip,
   faBuildingUser,
+  faTimesCircle,
+  faChartBar 
 } from "@fortawesome/free-solid-svg-icons";
 import { HomeOutlined } from "@ant-design/icons";
 import { Link, useNavigate } from "react-router-dom";
@@ -30,10 +32,6 @@ const SiderBarWebAdmin = ({ choose }) => {
     setSelectedKeys([item.key]);
   };
 
-  const handleSubMenuClick = (item) => {
-    setSelectedKeys([item.key]);
-  };
-
   const items = [
     {
       label: "Thống Kê",
@@ -53,14 +51,14 @@ const SiderBarWebAdmin = ({ choose }) => {
     {
       label: "Quản Lý Nhân Viên",
       key: "menu-key/3",
-      icon: <FontAwesomeIcon icon={faIdCardClip} size="xl" />,
+      icon: <FontAwesomeIcon icon={faBuildingUser} size="xl" />,
       className: "listAccountStaff",
       link: "/listAccountStaff", // Add the link property
     },
     {
       label: "Quản Lý Đơn hàng",
       key: "menu-key/4",
-      icon: <FontAwesomeIcon icon={faBuildingUser} size="xl" />,
+      icon: <FontAwesomeIcon icon={faIdCardClip} size="xl" />,
       className: "listAccountHR",
       link: "/listOrderStatus", // Add the link property
     },
@@ -68,14 +66,14 @@ const SiderBarWebAdmin = ({ choose }) => {
     {
       label: "Chuyến đi bị hủy",
       key: "menu-key/5",
-      icon: <FontAwesomeIcon icon={faBuildingUser} size="xl" />,
+      icon: <FontAwesomeIcon icon={faTimesCircle} size="xl" />,
       className: "listCancelTourAdmin",
       link: "/listCancelTourAdmin", // Add the link property
     },
     {
       label: "Báo Cáo Giao Dịch",
       key: "menu-key/6",
-      icon: <FontAwesomeIcon icon={faBuildingUser} size="xl" />,
+      icon: <FontAwesomeIcon icon={faChartBar} size="xl" />,
       className: "listTransaction",
       link: "/listTransaction", // Add the link property
     },
@@ -87,62 +85,9 @@ const SiderBarWebAdmin = ({ choose }) => {
     <Sider
       collapsed={collapsed}
       width={250}
-      style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}
+      style={{ marginTop: 20}}
     >
-      <div className="d-flex mt-3 justify-content-between ms-3 me-3 align-items-center">
-        {showWeHire && (
-          <div className="mb-0" id="wehire">
-            <img
-              src=""
-              alt=""
-              className="logo-light"
-              style={{ objectFit: "cover", width: "170px" }}
-            />
-          </div>
-        )}
-        {isLeftIcon ? (
-          <div
-            style={{
-              width: "40px",
-              height: "40px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "#f8f7fd",
-              borderRadius: "10px",
-            }}
-          >
-            <FontAwesomeIcon
-              icon={faAngleLeft}
-              size="xl"
-              color="#6546D2"
-              onClick={toggleSidebar}
-              style={{ cursor: "pointer" }}
-            />
-          </div>
-        ) : (
-          <div
-            className="ms-2"
-            style={{
-              width: "40px",
-              height: "40px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: "#f8f7fd",
-              borderRadius: "10px",
-            }}
-          >
-            <FontAwesomeIcon
-              icon={faAngleRight}
-              size="xl"
-              color="#6546D2"
-              onClick={toggleSidebar}
-              style={{ cursor: "pointer" }}
-            />
-          </div>
-        )}
-      </div>
+      
       <Menu
         className="mt-4"
         style={{ border: "0px" }}

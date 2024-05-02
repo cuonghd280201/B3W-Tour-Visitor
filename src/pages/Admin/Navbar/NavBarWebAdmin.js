@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Badge, Space, Layout, Menu, Input, Modal } from "antd";
 import {
     Dropdown,
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
-    Form,
-    Label,
-    Col,
-    Row,
 } from "reactstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { signOut } from '@firebase/auth';
@@ -16,10 +11,6 @@ import { auth } from "../../../utils/firebase";
 
 const NavBarWebAdmin = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [name, setName] = useState("");
-    const [imgUser, setImgUser] = useState("");
-    const [status, setStatus] = useState("");
-    const [roleString, setRoleString] = useState("");
 
     //-------------------------------------------------------------------------
     const userId = localStorage.getItem("userId");
@@ -73,15 +64,13 @@ const NavBarWebAdmin = () => {
                     className="mt-4 justify-content-end"
                 >
                     <div
-                        className="d-flex gap-4 align-items-center"
-                        style={{ height: "inherit" }}
+                        
                     >
 
                         <div
                             className="p-1  d-flex gap-3 align-items-center me-2"
                             style={{
                                 height: "60px",
-                                backgroundColor: "#F9BE37",
                                 color: "white",
                                 borderRadius: "7px",
                             }}
@@ -115,21 +104,9 @@ const NavBarWebAdmin = () => {
                                 </DropdownToggle>
                                 <DropdownMenu
                                     style={{
-                                        marginLeft: "-25px",
+                                        marginLeft: "80px",
                                     }}
                                 >
-                                    <DropdownItem style={{ padding: "0px" }}>
-                                        <div>
-                                            {/* onClick={openPopupProfileUser} */}
-                                            <Link
-                                                to={"/profileadmin"}
-                                                className="dropdown-item px-0 p-0"
-                                            >
-                                                <div className="dropdown-item">Thông Tin Cá Nhân</div>
-                                            </Link>
-                                        </div>
-                                    </DropdownItem>
-
                                     <DropdownItem style={{ padding: "0px" }}>
                                     <div>
                                             <Link className="dropdown-item" onClick={handleLogout}>
@@ -142,15 +119,6 @@ const NavBarWebAdmin = () => {
                         </div>
                     </div>
                 </div>
-                {/* ------------------------------------------------------------------------------------- */}
-
-                {/* <UpdateProfileManagerPopup
-          isModalOpen={showPopupProfileUser}
-          closeModal={closePopupProfileUser}
-          userId={userId}
-        ></UpdateProfileManagerPopup> */}
-
-                {/* ------------------------------------------------------------------------------------- */}
             </div>
         </React.Fragment>
     );

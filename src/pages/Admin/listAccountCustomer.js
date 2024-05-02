@@ -68,7 +68,7 @@ const ListAccountCustomer = () => {
     }
     return filteredUsers;
   }, [sortedInfo, filteredUsers]);
-  
+
   const banUserById = async (id) => {
     try {
       const response = await adminServices.banUserById(id);
@@ -92,9 +92,11 @@ const ListAccountCustomer = () => {
 
         <div
           style={{
-            margin: "20px",
-            padding: "20px",
-            backgroundColor: "#fff",
+            padding: "10px 5px 0px 5px",
+            background: "white",
+            margin: "30px",
+            borderRadius: "12px",
+            boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
           }}
         >
           <Content>
@@ -146,6 +148,7 @@ const ListAccountCustomer = () => {
             >
               <div style={{ height: "600px", overflow: "auto" }}>
                 <Table
+                  bac
                   className="custom-table"
                   dataSource={sortedDataSource}
                   pagination={page}
@@ -156,7 +159,7 @@ const ListAccountCustomer = () => {
                         <th
                           {...props}
                           style={{
-                            background: "hsl(253deg 61% 85%)",
+                            background: "linear-gradient(to top, #7B68EE, #87CEFA)",
                             border: "none",
                           }}
                         />

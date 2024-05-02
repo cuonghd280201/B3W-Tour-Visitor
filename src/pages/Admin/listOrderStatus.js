@@ -3,7 +3,7 @@ import { Layout, Table, Select, Button, Modal } from "antd";
 import NavBarWebAdmin from "./Navbar/NavBarWebAdmin";
 import SiderBarWebAdmin from "./SlideBar/SiderBarWebAdmin";
 import adminServices from "../../services/admin.services";
-import orderServices from "../../services/order.services";
+import { useNavigate } from "react-router-dom";
 
 const { Content } = Layout;
 const { Column } = Table;
@@ -21,6 +21,7 @@ const ListOrderStatus = () => {
     WAITING_CANCEL: "asc",
     CANCEL: "asc",
   });
+  const [priceSortOrder, setPriceSortOrder] = useState("asc");
 
   useEffect(() => {
     fetchOrderStatusData();
@@ -30,7 +31,7 @@ const ListOrderStatus = () => {
     try {
       const response = await adminServices.getOrderStatus(
         orderStatus,
-        sortOrderMap[orderStatus] // Use the sorting order for the current status
+        sortOrderMap[orderStatus]
       );
       setOrderStatusData(response.data.data);
     } catch (error) {
@@ -39,168 +40,62 @@ const ListOrderStatus = () => {
   };
 
   const handleOrderStatusChange = (value) => {
-    setOrderStatus(value); // Update selected order status
+    setOrderStatus(value);
   };
 
   const getDetailOrder = async (orderId) => {
     try {
-      const response = await orderServices.getDetailOrder(orderId);
-
-      Modal.info({
-        title: `Thông tin đơn hàng`,
-        width: "80%", // Set the width of the modal (adjust as needed)
-        centered: true, // Center the modal on the screen
-        content: (
-          <div style={{ padding: "20px" }}>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Tiền đơn đặt: {formatCurrency(response.data.data.price)}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Đã thanh toán: {formatCurrency(response.data.data.paid)}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Số tiền thanh toán còn lại:{" "}
-              {formatCurrency(response.data.data.amount)}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Tiền đã hoàn trả: {formatCurrency(response.data.data.refund)}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Trạng thái đơn hàng: {response.data.data.orderStatus}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Ngày tạo đơn: {response.data.data.createDate}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Ngày cập nhật đơn: {response.data.data.updateDate}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Nhân viên duyệt hoàn tiền:{" "}
-              {response.data.data?.updateBy === null
-                ? "Chưa có"
-                : response.data.data.updateBy}
-            </p>
-
-            <h5
-              style={{
-                marginBottom: "12px",
-                fontSize: "18px",
-                fontWeight: "bold",
-              }}
-            >
-              Thông tin ngày đi
-            </h5>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Mã thời gian chuyến đi: {response.data.data.tourTimeDTO.id}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Ngày bắt đầu: {response.data.data.tourTimeDTO.startDate}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Ngày kết thúc: {response.data.data.tourTimeDTO.endDate}
-            </p>
-
-            <h5
-              style={{
-                marginBottom: "12px",
-                fontSize: "18px",
-                fontWeight: "bold",
-              }}
-            >
-              Danh sách khách hàng
-            </h5>
-            {response.data.data &&
-              response.data.data.tourVisitorDTOList.map((tourVist, index) => (
-                <div key={index} style={{ marginBottom: "10px" }}>
-                  <p style={{ marginBottom: "4px", fontSize: "14px" }}>
-                    Tên: {tourVist.name}
-                  </p>
-                  <p style={{ marginBottom: "4px", fontSize: "14px" }}>
-                    Số điện thoại: {tourVist.phone}
-                  </p>
-                  <p style={{ marginBottom: "4px", fontSize: "14px" }}>
-                    Ngày sinh: {tourVist.dateOfBirth}
-                  </p>
-                </div>
-              ))}
-
-            <h5
-              style={{
-                marginBottom: "12px",
-                fontSize: "18px",
-                fontWeight: "bold",
-              }}
-            >
-              Thông tin chuyến đi
-            </h5>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Tên Chuyến đi: {response.data.data.tourDTO.title}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Giá chuyến đi: {formatCurrency(response.data.data.tourDTO.price)}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Nơi đến: {response.data.data.tourDTO.endLocation}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Mã chuyến đi: {response.data.data.tourDTO.code}
-            </p>
-
-            <h5
-              style={{
-                marginBottom: "12px",
-                fontSize: "18px",
-                fontWeight: "bold",
-              }}
-            >
-              Thông tin người đặt
-            </h5>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Tên người đặt: {response.data.data.userDTO.name}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Số điện thoại: {response.data.data.userDTO.phone}
-            </p>
-            <p style={{ marginBottom: "8px", fontSize: "16px" }}>
-              Email: {response.data.data.userDTO.email}
-            </p>
-          </div>
-        ),
-      });
+      navigate(`/orderDetail/${orderId}`);
     } catch (error) {
-      console.error("Error fetching order details:", error);
+      console.error("Error navigate order detail page:", error);
     }
   };
 
-  const formatCurrency = (value) => {
-    return new Intl.NumberFormat("vi-VN", {
-      style: "currency",
-      currency: "VND",
-    }).format(value);
+  const navigate = useNavigate();
+
+  const handlePriceSort = (value) => {
+    setPriceSortOrder(value);
+
+    const sortedData = [...orderStatusData];
+
+    sortedData.sort((a, b) => {
+      if (value === "asc") {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    });
+
+    setOrderStatusData(sortedData);
   };
   const getStatusColor = (status) => {
     switch (status) {
       case "DONE":
-        return "#32CD32"; // Example color for "DONE" status
+        return "#32CD32";
       case "NOT_DONE":
-        return "red"; // Example color for "NOT_DONE" status
+        return "red";
       case "WAITING_CANCEL":
-        return "#FEBE10"; // Example color for "WAITING_CANCEL" status
+        return "#FEBE10";
       case "CANCEL":
-        return "gray"; // Example color for "CANCEL" status
+        return "gray";
       default:
-        return "black"; // Default color
+        return "black";
     }
   };
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
-      {/* Sidebar and Navbar components */}
       <SiderBarWebAdmin choose={"menu-key/4"}></SiderBarWebAdmin>
       <Layout>
         <NavBarWebAdmin></NavBarWebAdmin>
         <Content
-          style={{ margin: "20px", padding: "20px", backgroundColor: "#fff" }}
+          style={{
+            padding: "10px 5px 0px 5px",
+            background: "white",
+            margin: "30px",
+            borderRadius: "12px",
+            boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+          }}
         >
           {/* Title and Select component */}
           <h1
@@ -219,16 +114,27 @@ const ListOrderStatus = () => {
           >
             Danh sách trạng thái đơn hàng
           </h1>
+          
           <Select
             defaultValue="DONE"
             onChange={handleOrderStatusChange}
-            style={{ marginLeft: "400px", width: "200px" }}
+            style={{ marginLeft: 200, width: 200 }}
           >
             <Option value="DONE">ĐÃ HOÀN THÀNH</Option>
             <Option value="NOT_DONE">CHƯA HOÀN THÀNH</Option>
             <Option value="WAITING_CANCEL">CHỜ HỦY</Option>
             <Option value="CANCEL">HỦY</Option>
           </Select>
+
+          <Select
+            defaultValue={priceSortOrder}
+            onChange={handlePriceSort}
+            style={{ width: 180, marginBottom: 16, marginLeft: 10 }}
+          >
+            <Option value="asc">Giá tăng dần</Option>
+            <Option value="desc">Giá giảm dần</Option>
+          </Select>
+
           {/* Table component */}
           <Table
             dataSource={orderStatusData}
@@ -239,7 +145,7 @@ const ListOrderStatus = () => {
                   <th
                     {...props}
                     style={{
-                      background: "hsl(253deg 61% 85%)",
+                      background: "linear-gradient(to top, #7B68EE, #87CEFA)",
                       border: "none",
                     }}
                   />
@@ -259,6 +165,7 @@ const ListOrderStatus = () => {
                     currency: "VND",
                   })}
                 </span>
+                
               )}
             />
             <Column
@@ -328,7 +235,28 @@ const ListOrderStatus = () => {
               title="Chi tiết đơn hàng"
               key="action"
               render={(text, record) => (
-                <Button onClick={() => getDetailOrder(record.id)}>
+                <Button
+                  style={{
+                    fontSize: "13px",
+                    color: "#5cb85c",
+                    textDecoration: "none",
+                    padding: "8px 10px",
+                    border: "1px solid #5cb85c",
+                    borderRadius: "4px",
+                    transition: "background-color 0.3s, color 0.3s",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "#4cae4c";
+                    e.target.style.color = "#fff";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "transparent";
+                    e.target.style.color = "#5cb85c";
+                  }}
+                  onClick={() => getDetailOrder(record.id)}
+                >
                   Xem chi tiết
                 </Button>
               )}

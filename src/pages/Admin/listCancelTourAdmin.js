@@ -117,16 +117,7 @@ const ListCancelTourAdmin = () => {
           }}
         >
           <Content>
-            <Select
-              defaultValue="WAITING_CANCEL"
-              onChange={handleOrderStatusChange}
-              style={{ width: "200px" }}
-            >
-              <Option value="DONE">ĐÃ HOÀN THÀNH</Option>
-              <Option value="NOT_DONE">CHƯA HOÀN THÀNH</Option>
-              <Option value="WAITING_CANCEL">CHỜ HỦY</Option>
-              <Option value="CANCEL">HỦY</Option>
-            </Select>
+            
             <TabContent
               style={{
                 padding: "20px 0px 0px 20px",
@@ -209,7 +200,7 @@ const ListCancelTourAdmin = () => {
                               </p>
                               <p className="mb-0">
                                 <span className="text-muted">
-                                  Số tiền khác hàng đã trả:{" "}
+                                  Số tiền khách hàng đã trả:{" "}
                                   <b>
                                     {orderS.paid.toLocaleString("vi-VN", {
                                       style: "currency",

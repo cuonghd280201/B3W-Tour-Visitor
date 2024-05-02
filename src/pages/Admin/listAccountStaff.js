@@ -139,7 +139,7 @@ const ListAccountStaff = () => {
                         <th
                           {...props}
                           style={{
-                            background: "hsl(253deg 61% 85%)",
+                            background: "linear-gradient(to top, #7B68EE, #87CEFA)",
                             border: "none",
                           }}
                         />
