@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Layout, Table, Select, Button, Modal } from "antd";
+import { Layout, Table, Select, Button, Input } from "antd";
 import NavBarWebAdmin from "./Navbar/NavBarWebAdmin";
 import SiderBarWebAdmin from "./SlideBar/SiderBarWebAdmin";
 import adminServices from "../../services/admin.services";
 import { useNavigate } from "react-router-dom";
-
+import { SearchOutlined } from "@ant-design/icons";
 const { Content } = Layout;
 const { Column } = Table;
 const { Option } = Select;
@@ -22,6 +22,7 @@ const ListOrderStatus = () => {
     CANCEL: "asc",
   });
   const [priceSortOrder, setPriceSortOrder] = useState("asc");
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     fetchOrderStatusData();
@@ -68,6 +69,14 @@ const ListOrderStatus = () => {
 
     setOrderStatusData(sortedData);
   };
+
+  const handleSearch = () => {
+    const filteredData = orderStatusData.filter((item) =>
+      item.code.toLowerCase().includes(searchInput.toLowerCase())
+    );
+    setOrderStatusData(filteredData);
+  };
+
   const getStatusColor = (status) => {
     switch (status) {
       case "DONE":
@@ -114,11 +123,18 @@ const ListOrderStatus = () => {
           >
             Danh sách trạng thái đơn hàng
           </h1>
-          
+          <Input.Search
+              placeholder="Tìm kiếm theo mã đơn hàng"
+              value={searchInput}
+              onChange={(e) => setSearchInput(e.target.value)}
+              onSearch={handleSearch}
+              style={{ width: 240 ,marginLeft:360}}
+              enterButton={<Button type="primary" icon={<SearchOutlined />} />}
+            />
           <Select
             defaultValue="DONE"
             onChange={handleOrderStatusChange}
-            style={{ marginLeft: 200, width: 200 }}
+            style={{ marginLeft: 680, width: 200 }}
           >
             <Option value="DONE">ĐÃ HOÀN THÀNH</Option>
             <Option value="NOT_DONE">CHƯA HOÀN THÀNH</Option>
