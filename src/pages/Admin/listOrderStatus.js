@@ -254,22 +254,22 @@ const ListOrderStatus = () => {
                 <Button
                   style={{
                     fontSize: "13px",
-                    color: "#5cb85c",
+                    color: "#BA55D3",
                     textDecoration: "none",
                     padding: "8px 10px",
-                    border: "1px solid #5cb85c",
+                    border: "1px solid #BA55D3",
                     borderRadius: "4px",
-                    transition: "background-color 0.3s, color 0.3s",
+                    transition: "background-color 0.1s, color 0.1s",
                     display: "flex",
                     alignItems: "center",
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = "#4cae4c";
+                    e.target.style.backgroundColor = "#BA55D3";
                     e.target.style.color = "#fff";
                   }}
                   onMouseLeave={(e) => {
                     e.target.style.backgroundColor = "transparent";
-                    e.target.style.color = "#5cb85c";
+                    e.target.style.color = "#BA55D3";
                   }}
                   onClick={() => getDetailOrder(record.id)}
                 >
