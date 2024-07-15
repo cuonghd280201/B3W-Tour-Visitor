@@ -24,6 +24,7 @@ const OrderDetail = () => {
       try {
         const response = await orderServices.getDetailOrder(orderId);
         setOrderDetails(response.data.data);
+        console.log(response.data.data)
       } catch (error) {
         console.error("Error fetching order detail:", error);
       }
@@ -33,6 +34,8 @@ const OrderDetail = () => {
       fetchOrderDetails();
     }
   }, [orderId]);
+
+
   const getStatusText = (status) => {
     switch (status) {
       case "DONE":

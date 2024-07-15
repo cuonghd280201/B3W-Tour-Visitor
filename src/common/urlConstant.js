@@ -9,7 +9,7 @@ export default {
             transaction: "/transaction/all",
             paging: "pageNumber=${currentPage}&pageSize=${pageSize}",
             sorting: "sortBy=${sortBy}&sortOrder=${sortOrder}",
-            
+
 
         },
         tour: {
